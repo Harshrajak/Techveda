@@ -1,0 +1,155 @@
+:root {
+  --gradient: linear-gradient(90deg, #f39c12, #ff7200);
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.4s ease-in-out;
+}
+
+*::selection {
+  background: #ff7200;
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 1.5rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #333;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(#f39c12, #ff7200);
+}
+
+.btn {
+  padding: 0.7rem 3rem;
+  font-size: 2rem;
+  color: #fff;
+  background: var(--gradient);
+  border-radius: 5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: -100%;
+  background: #fff9;
+  height: 150%;
+  width: 20%;
+  transform: rotate(25deg);
+  z-index: -1;
+}
+
+.btn:hover::before {
+  transition: 0.4s linear;
+  left: 120%;
+}
+
+.registration-form {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registration-form.popup {
+  top: 0;
+}
+
+.registration-form form {
+  width: 35rem;
+  background: #fff;
+  margin: 0 2rem;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.1rem 0.3rem #333;
+  position: relative;
+}
+
+.registration-form form h3 {
+  font-size: 3rem;
+  color: #ff7200;
+  padding: 1rem 0;
+}
+
+.registration-form form .box {
+  width: 100%;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  border-bottom: 0.2rem solid #666;
+  font-size: 1.6rem;
+  color: #333;
+  text-transform: none;
+}
+
+.registration-form form .box::placeholder {
+  text-transform: capitalize;
+}
+
+.registration-form form .box:focus {
+  border-color: #ff7200;
+}
+
+.registration-form form .box:nth-child(6) {
+  margin-bottom: 5rem;
+}
+
+.registration-form form p {
+  font-size: 1.4rem;
+  color: #666;
+  padding: 0.5rem 0;
+}
+
+.registration-form form p a {
+  color: #ff7200;
+}
+
+.registration-form form .btn {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.registration-form form .btn:hover {
+  background: #444;
+}
+
+.registration-form form .fa-times {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #999;
+}
+
+.registration-form form .fa-times:hover {
+  color: #444;
+}
